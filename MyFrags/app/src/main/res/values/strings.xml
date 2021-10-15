@@ -1,0 +1,20 @@
+<resources>
+
+    <!-- Nazwa aplikacji -->
+    <string name="app_name">Dynamic fragments</string>
+
+    <!-- Napisy na przyciskach -->
+    <string name="button_shuffle">Shuffle</string>
+    <string name="button_clockwise">Clockwise</string>
+    <string name="button_hide">Hide</string>
+    <string name="button_restore">Restore</string>
+    <string name="button_increase">+1</string>
+    <string name="button_decrease">-1</string>
+
+    <!-- Wartość poczatkowa -->
+    <string name="zero">0</string>
+
+    <!-- Obsługa pola do wprowadzania danych -->
+    <string name="label_enter">Enter:</string>
+    <string name="label_hint">Enter new value</string>
+</resources>
