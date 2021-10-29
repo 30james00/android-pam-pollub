@@ -43,7 +43,7 @@ public class Fragment4 extends Fragment {
         //3.
         numberObserver = newInteger -> {
             turnOffWatcher = true;
-            edit.setText(newInteger.toString());
+            edit.setText(String.valueOf(newInteger));
         };
 
         //4.
@@ -62,18 +62,18 @@ public class Fragment4 extends Fragment {
             @Override
             public void afterTextChanged(Editable s) {
 
-                if(!turnOffWatcher){
+                if (!turnOffWatcher) {
 
                     Integer i;
-                    try{
-                        i = Integer.parseInt( s.toString() );
-                    } catch (NumberFormatException e){
+                    try {
+                        i = Integer.parseInt(s.toString());
+                    } catch (NumberFormatException e) {
                         i = fragsData.counter.getValue();
                     }
                     fragsData.counter.setValue(i);
 
                 } else {
-                    turnOffWatcher = !turnOffWatcher;
+                    turnOffWatcher = false;
                 }
             }
         };

@@ -28,15 +28,10 @@ public class Fragment3 extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_3, container, false);
-        text = (TextView) view.findViewById(R.id.current);
-        button = (Button) view.findViewById(R.id.button_decrease);
+        text = view.findViewById(R.id.current);
+        button = view.findViewById(R.id.button_decrease);
         fragsData = new ViewModelProvider(requireActivity()).get(FragsData.class);
-        numberObserver = new Observer<Integer>() {
-            @Override
-            public void onChanged(Integer newInteger) {
-                text.setText(newInteger.toString());
-            }
-        };
+        numberObserver = newInteger -> text.setText(newInteger.toString());
         fragsData.counter.observe(getViewLifecycleOwner(), numberObserver);
         button.setOnClickListener(view1 -> {
             Integer i = fragsData.counter.getValue();
