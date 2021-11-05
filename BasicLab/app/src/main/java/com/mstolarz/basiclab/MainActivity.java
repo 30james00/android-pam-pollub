@@ -6,8 +6,6 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.View;
-
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -54,10 +52,13 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        String message = "";
+        switch (id) {
+            case R.id.action_settings: message = "Settings"; break;
+            case R.id.action1: message = "Action 1"; break;
+            case R.id.action2: message = "Action 2"; break;
         }
+        Snackbar.make(findViewById(R.id.rootLayout), message, Snackbar.LENGTH_LONG).show();
 
         return super.onOptionsItemSelected(item);
     }
